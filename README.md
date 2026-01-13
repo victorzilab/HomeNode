@@ -45,29 +45,30 @@ Este projeto é desenvolvido de forma incremental e totalmente documentada, acom
 ## 🚀 Como clonar e abrir o projeto
 
 ### 1️⃣ Clonar o repositório
-
 ```bash
 git clone https://github.com/victorzilab/HomeNode.git
 cd HomeNode
+```
 
 ### 2️⃣ Abrir no VS Code
+```bash
 code .
+```
 
-3️⃣ Instalar dependências
+### 3️⃣ Instalar dependências
+- Certifique-se de que o **PlatformIO** esteja instalado no VS Code
+- O PlatformIO instalará automaticamente as bibliotecas necessárias
 
-Certifique-se de que o PlatformIO esteja instalado no VS Code
+### 4️⃣ Compilar e gravar
+- Conecte o Arduino via USB
+- Selecione a porta correta
+- Compile e faça o upload do firmware
 
-O PlatformIO instalará automaticamente as bibliotecas necessárias
+---
 
-4️⃣ Compilar e gravar
+## 📂 Estrutura do projeto
 
-Conecte o Arduino via USB
-
-Selecione a porta correta
-
-Compile e faça o upload do firmware
-
-📂 Estrutura do projeto
+```text
 HomeNode/
 ├── src/            # Código principal do firmware
 ├── include/        # Headers (reservado para modularização futura)
@@ -76,39 +77,30 @@ HomeNode/
 ├── test/           # Testes (placeholder)
 ├── platformio.ini  # Configuração do PlatformIO
 └── README.md
-
-🕵️ sniffer.cpp — Leitor de Códigos RF 433 MHz
-
-O arquivo sniffer.cpp é um utilitário auxiliar utilizado para a captura e identificação de códigos provenientes de controles RF 433 MHz compatíveis.
-
-Esse sketch deve ser gravado separadamente no Arduino e tem como objetivo auxiliar na fase de mapeamento dos botões do controle remoto.
-
-Funcionamento
-
-Recebe sinais através do receptor RF 433 MHz
-
-Decodifica os valores compatíveis com a biblioteca RCSwitch
-
-Exibe os códigos recebidos diretamente na porta serial
-
-Os códigos capturados podem então ser utilizados no firmware principal do HomeNode para associar cada botão do controle RF a uma ação (relé).
-
-⚠️ Observação:
-O sniffer.cpp não faz parte do firmware principal do HomeNode.
-Ele é destinado exclusivamente a testes, análise de sinais e identificação de códigos RF durante o desenvolvimento.
-
-📜 Licença
-
-Este projeto é distribuído sob a licença MIT.
-Sinta-se livre para usar, modificar e contribuir.
-
+```
 
 ---
 
-Se quiser, próximo nível seria:
-- adicionar **Roadmap**
-- adicionar **diagrama de blocos**
-- colocar **badge de PlatformIO / License / Arduino**
-- ou escrever um **texto de descrição perfeito pro vídeo**
+## 🕵️ sniffer.cpp — Leitor de Códigos RF 433 MHz
 
-Esse README já está nível projeto open-source sério 🚀
+O arquivo `sniffer.cpp` é um utilitário auxiliar utilizado para a **captura e identificação de códigos provenientes de controles RF 433 MHz compatíveis**.
+
+Esse sketch deve ser gravado separadamente no Arduino e tem como objetivo auxiliar na fase de mapeamento dos botões do controle remoto.
+
+### Funcionamento
+- Recebe sinais através do **receptor RF 433 MHz**
+- Decodifica os valores compatíveis com a biblioteca `RCSwitch`
+- **Exibe os códigos recebidos diretamente na porta serial**
+
+Os códigos capturados podem então ser utilizados no firmware principal do **HomeNode** para associar cada botão do controle RF a uma ação (relé).
+
+> ⚠️ **Observação:**  
+> O `sniffer.cpp` **não faz parte do firmware principal do HomeNode**.  
+> Ele é destinado exclusivamente a testes, análise de sinais e identificação de códigos RF durante o desenvolvimento.
+
+---
+
+## 📜 Licença
+
+Este projeto é distribuído sob a licença **MIT**.  
+Sinta-se livre para usar, modificar e contribuir.

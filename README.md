@@ -50,8 +50,7 @@ Este projeto é desenvolvido de forma incremental e totalmente documentada, acom
 git clone https://github.com/victorzilab/HomeNode.git
 cd HomeNode
 
-
-2️⃣ Abrir no VS Code
+### 2️⃣ Abrir no VS Code
 code .
 
 3️⃣ Instalar dependências
